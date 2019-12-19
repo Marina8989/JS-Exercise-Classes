@@ -94,7 +94,8 @@ class Car {
         }
 
         if (distance > this.tank * this.milesPerGallon) {
-            this.odometer + this.tank * this.milesPerGallon;
+            this.odometer += this.tank * this.milesPerGallon;
+            this.tank = 0;
 
             return `I ran out of fuel at ${this.odometer} miles!`;
         }
@@ -151,7 +152,7 @@ class Instructor extends Lambdasian {
         return `Today we are learning about redux`;
     }
     grade(student, subject) {
-        return `${this.name} receives a perfect score on redux`;
+        return `${student.name} receives a perfect score on ${subject}`;
     }
 }
 
@@ -209,10 +210,10 @@ class ProjectManager extends Instructor {
         this.favInstructor = obj.favInstructor;
     }
     standUp(channel) {
-        return `${this.name} announcess to eu3, @channel standy times!`;
+        return `${this.name} announcess to ${channel}, @channel standy times!`;
     }
     debugsCode(student, subject) {
-        return `Luke debugs ${this.name}'s code on redux`;
+        return ` ${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
 
